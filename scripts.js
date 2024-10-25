@@ -8,7 +8,7 @@ const responsaveis = {
     'Lucas.moraes@assessorialpha.com': { senha: '57489086000185', comissao: 0.06 }, // Lucas Moraes dos Santos
     'enzo.gaioso@assessorialpha.com': { senha: '52523011000150', comissao: 0.07 }, // Enzo Lucas Rodrigues Gaioso
     'gabriel.ramalho@assessorialpha.com': { senha: '54113569000192', comissao: 0.08 }, // Gabriel Coelho Ramalho
-    'admin@assessorialpha.com': { senha: 'alpha123', comissao: 0.08 } // Gabriel Coelho Ramalho
+    'admin@assessorialpha.com': { senha: 'alpha123', comissao: 0.08 } // Administrador
 };
 
 // Lógica de Login
@@ -37,14 +37,6 @@ function realizarLogin() {
         mostrarMensagem('E-mail ou senha incorretos.', document.getElementById('loginMessage'));
     }
 }
-
-// Adiciona o evento de tecla para o formulário de venda
-document.getElementById('vendaForm').addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Impede o envio padrão do formulário
-        enviarVenda(); // Chama a função para enviar a venda
-    }
-});
 
 // Função para enviar a venda
 function enviarVenda(event) {
