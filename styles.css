@@ -1,0 +1,131 @@
+/* Importando a tipografia Public Sans */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+
+/* Estilos gerais da página */
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #141215;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Estilo do formulário */
+form {
+    background-color: #1e1b22;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    margin: auto; /* Centraliza o formulário */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilo para o campo de valor */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #2a2730;
+    color: #FFFFFF;
+    font-size: 16px;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #888;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FFB400;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #FFB400;
+    color: #000000;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e6a200;
+}
+
+/* Estilo da mensagem */
+#mensagem,
+#loginMessage {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #FFB400;
+}
+
+/* Esconder div do formulário de venda inicialmente */
+#vendaDiv {
+    display: none;
+}
+
+/* Estilo para o ícone de configuração */
+.configuracao {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FFB400;
+}
+
+/* Ajuste único para #alterarSenha */
+
+#alterarSenha {
+    display: none; /* Inicialmente escondido */
+    position: fixed; /* Fica fixo na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+
+#alterarSenha input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#cancelarAlteracao {
+    background-color: #FFB400;
+    color: #000000;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Ícone de configuração */
+#configuracaoIcon {
+    display: none; /* O ícone de configuração só será exibido após o login */
+    cursor: pointer;
+}

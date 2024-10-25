@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css"> <!-- Seu CSS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Formulário de Login -->
+    <div id="loginDiv">
+      <form id="loginForm">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" placeholder="Seu e-mail" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+
+        <button type="button" id="loginBtn">Login</button>
+        <p id="loginMessage" style="color: red;"></p>
+      </form>
+    </div>
+
+    <!-- Formulário de Venda -->
+    <div id="vendaDiv" style="display: none;">
+      <!-- Link de Sair no canto superior direito -->
+      <a href="#" id="sairLink" style="position: absolute; top: 20px; right: 20px; color: white; font-weight: bold;">Sair</a>
+
+      <form id="vendaForm">
+        <label for="valor">Valor de Venda:</label>
+        <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
+
+        <!-- Campo Cliente adicionado -->
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente" required>
+
+        <button type="submit">Enviar Venda</button>
+      </form>
+      <p id="mensagem"></p>
+    </div>
+  </div>
+
+  <script src="comissao.js"></script>
+  <script src="logout.js"></script> <!-- Script para Logout -->
+
+</body>
+
+</html>
