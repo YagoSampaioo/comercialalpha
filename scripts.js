@@ -11,14 +11,20 @@ const responsaveis = {
     'admin@assessorialpha.com': { senha: 'alpha123', comissao: 0.08 } // Gabriel Coelho Ramalho
 };
 
-
-// Função para exibir mensagens
-function mostrarMensagem(mensagem, elemento) {
-    elemento.innerText = mensagem;
-}
-
 // Lógica de Login
 document.getElementById('loginBtn').addEventListener('click', function () {
+    realizarLogin(); // Chama a função de login
+});
+
+// Adiciona evento de tecla para o formulário de login
+document.getElementById('loginForm').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        realizarLogin(); // Chama a função de login
+    }
+});
+
+function realizarLogin() {
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
 
@@ -30,12 +36,18 @@ document.getElementById('loginBtn').addEventListener('click', function () {
     } else {
         mostrarMensagem('E-mail ou senha incorretos.', document.getElementById('loginMessage'));
     }
+}
+
+// Adiciona o evento de tecla para o formulário de venda
+document.getElementById('vendaForm').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        enviarVenda(); // Chama a função para enviar a venda
+    }
 });
 
-// Envio do Formulário de Venda
-document.getElementById('vendaForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
+// Função para enviar a venda
+function enviarVenda() {
     const valorVendaInput = document.getElementById('valor').value;
     const valorVenda = parseFloat(valorVendaInput.replace('R$', '').replace('.', '').replace(',', '.'));
 
@@ -74,6 +86,9 @@ document.getElementById('vendaForm').addEventListener('submit', function (e) {
             // Esconde o loading e exibe a mensagem de sucesso
             document.getElementById('loading').style.display = 'none';
             mostrarMensagem(`Enviado com sucesso! O valor da comissão é de R$ ${valorComissao}.`, document.getElementById('mensagem'));
+
+            // Reseta os campos do formulário
+            document.getElementById('vendaForm').reset(); // Resetando o formulário
         })
         .catch(error => {
             // Esconde o loading e exibe a mensagem de erro
@@ -83,5 +98,4 @@ document.getElementById('vendaForm').addEventListener('submit', function (e) {
     } else {
         alert('Responsável não encontrado.');
     }
-});
-
+}
