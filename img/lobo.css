@@ -1,0 +1,6 @@
+.lobo {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: -20px; /* Espaço entre o ícone e o texto */
+    filter: brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(1000%) hue-rotate(12deg) brightness(76%) contrast(320%);
+    max-height: 50px;
+}

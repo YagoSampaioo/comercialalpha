@@ -140,48 +140,6 @@ button:hover {
     display: none;
 }
 
-/* Estilo para o ícone de configuração */
-.configuracao {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #FFB400;
-}
-
-/* Ajuste único para #alterarSenha */
-#alterarSenha {
-    display: none; /* Inicialmente escondido */
-    position: fixed; /* Fica fixo na tela */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta a posição */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 8px; /* Bordas arredondadas */
-    z-index: 1000; /* Fica acima de outros elementos */
-}
-
-#alterarSenha input {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-#cancelarAlteracao {
-    background-color: #FFB400;
-    color: #000000;
-    margin-top: 10px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Ícone de configuração */
-#configuracaoIcon {
-    display: none; /* O ícone de configuração só será exibido após o login */
-    cursor: pointer;
-}
-
 /* Loading */
 #loading {
     position: fixed;
@@ -203,7 +161,7 @@ button:hover {
 .loading-icon {
     width: 50px; /* Ajuste o tamanho conforme necessário */
     margin-bottom: -20px; /* Espaço entre o ícone e o texto */
-    filter: brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1705%) hue-rotate(43deg) brightness(96%) contrast(97%);
+    filter: brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(1000%) hue-rotate(12deg) brightness(76%) contrast(320%);
     max-height: 50px;
 }
 
