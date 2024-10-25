@@ -47,7 +47,9 @@ document.getElementById('vendaForm').addEventListener('keydown', function (event
 });
 
 // Função para enviar a venda
-function enviarVenda() {
+function enviarVenda(event) {
+    event.preventDefault(); // Previne o comportamento padrão do formulário
+
     const valorVendaInput = document.getElementById('valor').value;
     const valorVenda = parseFloat(valorVendaInput.replace('R$', '').replace('.', '').replace(',', '.'));
 
@@ -86,6 +88,9 @@ function enviarVenda() {
             // Esconde o loading e exibe a mensagem de sucesso
             document.getElementById('loading').style.display = 'none';
             mostrarMensagem(`Enviado com sucesso! O valor da comissão é de R$ ${valorComissao}.`, document.getElementById('mensagem'));
+
+            // Reseta os campos do formulário
+            document.getElementById('vendaForm').reset();
         })
         .catch(error => {
             // Esconde o loading e exibe a mensagem de erro
@@ -96,3 +101,6 @@ function enviarVenda() {
         alert('Responsável não encontrado.');
     }
 }
+
+// Adiciona o evento de tecla para o formulário de venda
+document.getElementById('vendaForm').addEventListener('submit', enviarVenda); // Aqui você precisa adicionar o evento no submit
