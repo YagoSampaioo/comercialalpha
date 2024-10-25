@@ -1,14 +1,14 @@
 const responsaveis = {
-    'gabriel.lopes@assessorialpha.com': { senha: '57491586000151', comissao: 0.07 }, // Gabriel Lopes Rodrigues
-    'angelo@assessorialpha.com': { senha: '57498021000130', comissao: 0.07 }, // Gabriel Ângelo da Silva Simões
-    'macsuel.silva@assessorialpha.com': { senha: '57492077000143', comissao: 0.06 }, // Macsuel Rosal Silva
-    'eduardo.sacardo@assessorialpha.com': { senha: '57489005000147', comissao: 0.06 }, // Eduardo Sacardo Pontes
-    'Iago.ramalho@assessorialpha.com': { senha: '75334183000107', comissao: 0.07 }, // Iago Cevola Navarro Ramalho
-    'gabriel.silva@assessorialpha.com': { senha: '05289557130', comissao: 0.07 }, // Gabriel Silva
-    'Lucas.moraes@assessorialpha.com': { senha: '57489086000185', comissao: 0.06 }, // Lucas Moraes dos Santos
-    'enzo.gaioso@assessorialpha.com': { senha: '52523011000150', comissao: 0.07 }, // Enzo Lucas Rodrigues Gaioso
-    'gabriel.ramalho@assessorialpha.com': { senha: '54113569000192', comissao: 0.08 }, // Gabriel Coelho Ramalho
-    'admin@assessorialpha.com': { senha: 'alpha123', comissao: 0.08 } // Administrador
+    'gabriel.lopes@assessorialpha.com': { senha: '57491586000151', comissao: 0.07 },
+    'angelo@assessorialpha.com': { senha: '57498021000130', comissao: 0.07 },
+    'macsuel.silva@assessorialpha.com': { senha: '57492077000143', comissao: 0.06 },
+    'eduardo.sacardo@assessorialpha.com': { senha: '57489005000147', comissao: 0.06 },
+    'Iago.ramalho@assessorialpha.com': { senha: '75334183000107', comissao: 0.07 },
+    'gabriel.silva@assessorialpha.com': { senha: '05289557130', comissao: 0.07 },
+    'Lucas.moraes@assessorialpha.com': { senha: '57489086000185', comissao: 0.06 },
+    'enzo.gaioso@assessorialpha.com': { senha: '52523011000150', comissao: 0.07 },
+    'gabriel.ramalho@assessorialpha.com': { senha: '54113569000192', comissao: 0.08 },
+    'admin@assessorialpha.com': { senha: 'alpha123', comissao: 0.08 }
 };
 
 // Lógica de Login
@@ -36,6 +36,12 @@ function realizarLogin() {
     } else {
         mostrarMensagem('E-mail ou senha incorretos.', document.getElementById('loginMessage'));
     }
+}
+
+// Função para exibir mensagens
+function mostrarMensagem(mensagem, elemento) {
+    elemento.textContent = mensagem; // Atualiza o texto do elemento
+    elemento.style.display = 'block'; // Garante que o elemento esteja visível
 }
 
 // Função para enviar a venda
@@ -75,7 +81,12 @@ function enviarVenda(event) {
                 'valorComissao': valorComissao
             })
         })
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
         .then(data => {
             // Esconde o loading e exibe a mensagem de sucesso
             document.getElementById('loading').style.display = 'none';
@@ -87,12 +98,12 @@ function enviarVenda(event) {
         .catch(error => {
             // Esconde o loading e exibe a mensagem de erro
             document.getElementById('loading').style.display = 'none';
-            mostrarMensagem('Erro ao enviar os dados.', document.getElementById('mensagem'));
+            mostrarMensagem('Erro ao enviar os dados: ' + error.message, document.getElementById('mensagem'));
         });
     } else {
         alert('Responsável não encontrado.');
     }
 }
 
-// Adiciona o evento de tecla para o formulário de venda
-document.getElementById('vendaForm').addEventListener('submit', enviarVenda); // Aqui você precisa adicionar o evento no submit
+// Adiciona o evento de submit para o formulário de venda
+document.getElementById('vendaForm').addEventListener('submit', enviarVenda);

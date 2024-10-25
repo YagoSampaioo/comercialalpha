@@ -23,7 +23,7 @@ form {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     width: 300px; /* Largura padrão */
-    margin: 0; /* Remove a margem */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
 }
 
 /* Estilos para telas pequenas */
@@ -77,7 +77,6 @@ form {
 }
 
 /* Resto do CSS sem alterações */
-
 label {
     display: block;
     margin-bottom: 8px;
@@ -133,6 +132,7 @@ button:hover {
     margin-top: 15px;
     font-size: 16px;
     color: white;
+    text-align: center; /* Centraliza o texto da mensagem */
 }
 
 /* Esconder div do formulário de venda inicialmente */
@@ -147,7 +147,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.87);
     display: none;
     flex-direction: column;
     align-items: center;
@@ -155,7 +155,7 @@ button:hover {
     color: white;
     font-size: 1.5em;
     z-index: 9999;
-    padding-top: 20px;
+    padding-top: 250px;
 }
 
 .loading-icon {
