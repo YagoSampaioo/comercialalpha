@@ -9,9 +9,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: center; /* Alinha horizontalmente no centro */
+    align-items: center; /* Alinha verticalmente no centro */
+    height: 100vh; /* Altura total da viewport */
     text-align: center;
     overflow: hidden; /* Oculta a barra de rolagem */
 }
@@ -23,7 +23,7 @@ form {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     width: 300px; /* Largura padrão */
-    margin: auto; /* Centraliza o formulário */
+    margin: 0; /* Remove a margem */
 }
 
 /* Estilos para telas pequenas */
@@ -147,7 +147,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: none;
     flex-direction: column;
     align-items: center;
