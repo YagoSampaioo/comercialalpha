@@ -86,9 +86,6 @@ function enviarVenda() {
             // Esconde o loading e exibe a mensagem de sucesso
             document.getElementById('loading').style.display = 'none';
             mostrarMensagem(`Enviado com sucesso! O valor da comissão é de R$ ${valorComissao}.`, document.getElementById('mensagem'));
-
-            // Reseta os campos do formulário
-            document.getElementById('vendaForm').reset(); // Resetando o formulário
         })
         .catch(error => {
             // Esconde o loading e exibe a mensagem de erro
