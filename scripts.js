@@ -8,6 +8,7 @@ const responsaveis = {
     'Lucas.moraes@assessorialpha.com': { senha: '57489086000185', comissao: 0.06 }, // Lucas Moraes dos Santos
     'enzo.gaioso@assessorialpha.com': { senha: '52523011000150', comissao: 0.07 }, // Enzo Lucas Rodrigues Gaioso
     'gabriel.ramalho@assessorialpha.com': { senha: '54113569000192', comissao: 0.08 } // Gabriel Coelho Ramalho
+    'admin@assessorialpha.com': { senha: 'alpha123', comissao: 1.00 } // Administrador
 };
 
 
