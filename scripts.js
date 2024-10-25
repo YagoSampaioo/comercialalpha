@@ -85,7 +85,7 @@ function enviarVenda(event) {
 
         document.getElementById('loading').style.display = 'block';
 
-        fetch('https://script.google.com/macros/s/AKfycbzOMWj0Mw5CZMHck43EUswHBpCFI_JjAZ9IL8gDA-nFcFqHGfxjkmkw1vOTZl9l4UEkcg/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbwTzRNLAqXVrSYe9LF_ysEEXial2-Om1lnhC-83wQtEYh5PleTMXJ6x2tnb7j04aInzkA/exec', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
