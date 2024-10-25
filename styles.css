@@ -79,7 +79,7 @@ button:hover {
 #loginMessage {
     margin-top: 15px;
     font-size: 16px;
-    color: #FFB400;
+    color: white;
 }
 
 /* Esconder div do formulário de venda inicialmente */
@@ -98,7 +98,6 @@ button:hover {
 }
 
 /* Ajuste único para #alterarSenha */
-
 #alterarSenha {
     display: none; /* Inicialmente escondido */
     position: fixed; /* Fica fixo na tela */
@@ -128,4 +127,86 @@ button:hover {
 #configuracaoIcon {
     display: none; /* O ícone de configuração só será exibido após o login */
     cursor: pointer;
+}
+
+/* Loading */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    z-index: 9999;
+    padding-top: 20px;
+}
+
+.loading-icon {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: -20px; /* Espaço entre o ícone e o texto */
+    filter: brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1705%) hue-rotate(43deg) brightness(96%) contrast(97%);
+    max-height: 50px;
+}
+
+/* Container */
+.container {
+    position: relative; /* Necessário para o posicionamento do efeito de luz */
+    z-index: 1; /* Garante que o conteúdo está acima do efeito de luz */
+}
+
+/* Efeito de luz */
+.light-effect {
+    position: absolute; /* Para posicionar atrás do formulário */
+    top: -50%; /* Ajuste para elevar a luz */
+    left: -50%; /* Ajuste para centralizar a luz */
+    width: 200%; /* Cobrir toda a largura */
+    height: 200%; /* Cobrir toda a altura */
+    background: radial-gradient(circle, rgba(255, 180, 0, 0.6) 30%, rgba(255, 180, 0, 0) 50%); /* Efeito de luz mais suave */
+    filter: blur(50px); /* Adiciona desfoque à luz */
+    z-index: -1; /* Coloca o efeito atrás do conteúdo */
+    pointer-events: none; /* Permite clicar nos elementos acima */
+    animation: pulse 4s infinite; /* Animação de pulsar */
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5); /* Aumentar a amplitude do pulsar */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Logo */
+.logo {
+    position: fixed; /* Para posicionar em relação ao viewport */
+    top: -30px; /* Distância do topo */
+    left: -30px; /* Distância da esquerda */
+    width: 300px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    z-index: 10; /* Garante que a logo fique acima de outros elementos */
+}
+
+/* Link de sair */
+#sairLink {
+    position: fixed; /* Fixa o link na tela */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Destaca o texto */
+    z-index: 10; /* Garante que o link fique acima de outros elementos */
+}
+
+body {
+    overflow: hidden; /* Oculta a barra de rolagem */
 }

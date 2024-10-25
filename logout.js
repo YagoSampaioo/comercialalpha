@@ -1,7 +1,8 @@
-// Função para deslogar
-document.getElementById('sairLink').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevenir comportamento padrão do link
-    // Lógica para deslogar e redirecionar para a tela de login
-    document.getElementById('vendaDiv').style.display = 'none';
-    document.getElementById('loginDiv').style.display = 'block'; // Mostra novamente a tela de login
-});
+// Função de Logout
+function logout() {
+    // Aqui você pode adicionar lógica para limpar os dados de login, se necessário
+    document.getElementById('vendaDiv').style.display = 'none'; // Esconde o formulário de venda
+    document.getElementById('loginDiv').style.display = 'block'; // Mostra o formulário de login
+    document.getElementById('sairLink').style.display = 'none'; // Esconde o link de sair
+    document.getElementById('loginMessage').innerText = ''; // Limpa a mensagem de erro
+}

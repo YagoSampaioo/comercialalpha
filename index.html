@@ -2,53 +2,62 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="icon" href="/img/logo-alpha-removebg-preview.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css"> <!-- Seu CSS -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comissão de Venda</title>
+    <link rel="icon" href="/img/logo-alpha-removebg-preview.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css"> <!-- Seu CSS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
 </head>
 
 <body>
+    <img src="/Apresentação_de_Marca_-_Assessoria_Alpha_Page_2-removebg-preview.png" alt="Logo" class="logo">
+    
+    <!-- Link de Sair no canto superior direito -->
+    <a href="#" id="sairLink" style="display: none;" onclick="logout()">
+      <img src="/sair (1).png" alt="Sair" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+      Sair
+    </a>
+  
+    <div class="container">
+        <div class="light-effect"></div> <!-- Elemento para o efeito de luz -->
 
-  <div class="container">
-    <!-- Formulário de Login -->
-    <div id="loginDiv">
-      <form id="loginForm">
-        <label for="email">E-mail:</label>
-        <input type="text" id="email" name="email" placeholder="Seu e-mail" required>
+        <!-- Formulário de Login -->
+        <div id="loginDiv">
+            <form id="loginForm">
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" name="email" placeholder="Seu e-mail" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
 
-        <button type="button" id="loginBtn">Login</button>
-        <p id="loginMessage" style="color: red;"></p>
-      </form>
+                <button type="button" id="loginBtn">Login</button>
+                <p id="loginMessage" style="color: red;"></p>
+            </form>
+        </div>
+
+        <!-- Formulário de Venda -->
+        <div id="vendaDiv" style="display: none;">
+            <form id="vendaForm">
+                <label for="valor">Valor de Venda:</label>
+                <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
+
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente" required>
+
+                <button type="submit">Registrar Venda</button>
+
+                <div id="loading" style="display: none;">
+                    <img src="/lobo.gif" alt="Ícone animado" class="loading-icon">
+                    <p>Registrando...</p>
+                </div>
+            </form>
+            <p id="mensagem"></p>
+        </div>
     </div>
 
-    <!-- Formulário de Venda -->
-    <div id="vendaDiv" style="display: none;">
-      <!-- Link de Sair no canto superior direito -->
-      <a href="#" id="sairLink" style="position: absolute; top: 20px; right: 20px; color: white; font-weight: bold;">Sair</a>
-
-      <form id="vendaForm">
-        <label for="valor">Valor de Venda:</label>
-        <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
-
-        <!-- Campo Cliente adicionado -->
-        <label for="cliente">Cliente:</label>
-        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente" required>
-
-        <button type="submit">Enviar Venda</button>
-      </form>
-      <p id="mensagem"></p>
-    </div>
-  </div>
-
-  <script src="/scripts.js"></script>
-  <script src="logout.js"></script> <!-- Script para Logout -->
-
+    <script src="scripts.js"></script> <!-- JS Principal -->
+    <script src="logout.js"></script> <!-- Script para Logout -->
 </body>
 
 </html>
