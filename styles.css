@@ -217,3 +217,37 @@ button:hover {
     font-weight: bold; /* Destaca o texto */
     z-index: 10; /* Garante que o link fique acima de outros elementos */
 }
+
+/* Remove o estilo padrão do checkbox */
+input[type="checkbox"] {
+    -webkit-appearance: none; /* Remove a aparência padrão no Safari e Chrome */
+    -moz-appearance: none; /* Remove a aparência padrão no Firefox */
+    appearance: none; /* Remove a aparência padrão */
+    width: 20px; /* Largura do checkbox */
+    height: 20px; /* Altura do checkbox */
+    border: 2px solid #FFB400; /* Cor da borda do checkbox */
+    border-radius: 4px; /* Bordas arredondadas */
+    outline: none; /* Remove a borda ao focar */
+    cursor: pointer; /* Muda o cursor para indicar clicável */
+    background-color: transparent; /* Fundo transparente */
+}
+
+/* Cor de fundo amarela quando marcado */
+input[type="checkbox"]:checked {
+    background-color: #FFB400; /* Cor de fundo amarela quando marcado */
+    border: 2px solid #FFB400; /* Manter a borda amarela */
+    position: relative; /* Para o estilo da marca de verificação */
+}
+
+/* Estilo da marca de verificação */
+input[type="checkbox"]:checked:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 5.67px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}

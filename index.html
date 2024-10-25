@@ -2,62 +2,69 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comissão de Venda</title>
-    <link rel="icon" href="/img/logomarca.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css"> <!-- Seu CSS -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comissão de Venda</title>
+  <link rel="icon" href="/img/logomarca.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css"> <!-- Seu CSS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
 </head>
 
 <body>
-    <img src="/img/logomarca.png" alt="Logo" class="logo">
-    
-    <!-- Link de Sair no canto superior direito -->
-    <a href="#" id="sairLink" style="display: none;" onclick="logout()">
-      <img src="/img/porta_de_sair.png" alt="Sair" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-      Sair
-    </a>
-  
-    <div class="container">
-        <div class="light-effect"></div> <!-- Elemento para o efeito de luz -->
+  <img src="/img/logomarca.png" alt="Logo" class="logo">
 
-        <!-- Formulário de Login -->
-        <div id="loginDiv">
-            <form id="loginForm">
-                <label for="email">E-mail:</label>
-                <input type="text" id="email" name="email" placeholder="Seu e-mail" required>
+  <!-- Link de Sair no canto superior direito -->
+  <a href="#" id="sairLink" style="display: none;" onclick="logout()">
+    <img src="/img/porta_de_sair.png" alt="Sair"
+      style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+    Sair
+  </a>
 
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+  <div class="container">
+    <div class="light-effect"></div> <!-- Elemento para o efeito de luz -->
 
-                <button type="button" id="loginBtn">Acessar</button>
-                <p id="loginMessage" style="color: red;"></p>
-            </form>
-        </div>
+    <!-- Formulário de Login -->
+    <div id="loginDiv">
+      <form id="loginForm">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" placeholder="Seu e-mail" required>
 
-        <!-- Formulário de Venda -->
-        <div id="vendaDiv" style="display: none;">
-            <form id="vendaForm">
-                <label for="valor">Valor de Venda:</label>
-                <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
 
-                <label for="cliente">Cliente:</label>
-                <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente" required>
+        <button type="button" id="loginBtn">Acessar</button>
+        <p id="loginMessage" style="color: red;"></p>
 
-                <button type="submit">Registrar Venda</button>
+        <label for="lembrarCheckbox" style="display: flex; align-items: center; cursor: pointer;">
+          <input type="checkbox" id="lembrarCheckbox">
+          <span style="margin-left: 10px;">Lembrar-me</span>
+        </label>
 
-                <div id="loading" style="display: none;">
-                    <img src="/img/lobo.gif" alt="Ícone animado" class="loading-icon">
-                    <p>Registrando...</p>
-                </div>
-            </form>
-            <p id="mensagem"></p>
-        </div>
+      </form>
     </div>
 
-    <script src="scripts.js"></script> <!-- JS Principal -->
-    <script src="logout.js"></script> <!-- Script para Logout -->
+    <!-- Formulário de Venda -->
+    <div id="vendaDiv" style="display: none;">
+      <form id="vendaForm">
+        <label for="valor">Valor de Venda:</label>
+        <input type="text" id="valor" name="valor" placeholder="R$ 0,00" required>
+
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente" required>
+
+        <button type="submit">Registrar Venda</button>
+
+        <div id="loading" style="display: none;">
+          <img src="/img/lobo.gif" alt="Ícone animado" class="loading-icon">
+          <p>Registrando...</p>
+        </div>
+      </form>
+      <p id="mensagem"></p>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script> <!-- JS Principal -->
+  <script src="logout.js"></script> <!-- Script para Logout -->
 </body>
 
 </html>

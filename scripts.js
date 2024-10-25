@@ -27,12 +27,20 @@ document.getElementById('loginForm').addEventListener('keydown', function (event
 function realizarLogin() {
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
+    const lembrarCheckbox = document.getElementById('lembrarCheckbox');
 
     if (responsaveis[email] && responsaveis[email].senha === senha) {
         document.getElementById('loginDiv').style.display = 'none';
         document.getElementById('vendaDiv').style.display = 'block';
         document.getElementById('sairLink').style.display = 'block'; // Mostra o link de sair
         document.getElementById('configuracaoIcon').style.display = 'block';
+
+        // Se o checkbox estiver marcado, salva o email no localStorage
+        if (lembrarCheckbox.checked) {
+            localStorage.setItem('emailConectado', email);
+        } else {
+            localStorage.removeItem('emailConectado');
+        }
     } else {
         mostrarMensagem('E-mail ou senha incorretos.', document.getElementById('loginMessage'));
     }
@@ -43,6 +51,15 @@ function mostrarMensagem(mensagem, elemento) {
     elemento.textContent = mensagem; // Atualiza o texto do elemento
     elemento.style.display = 'block'; // Garante que o elemento esteja visível
 }
+
+// Ao carregar a página, verifica se há um email salvo
+window.onload = function () {
+    const emailConectado = localStorage.getItem('emailConectado');
+    if (emailConectado) {
+        document.getElementById('email').value = emailConectado; // Preenche o campo de email
+        document.getElementById('lembrarCheckbox').checked = true; // Marca o checkbox
+    }
+};
 
 // Função para enviar a venda
 function enviarVenda(event) {
